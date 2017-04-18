@@ -43,7 +43,7 @@ func RandString(n int) string {
 }
 
 // generates random number of specified length
-func randNumber(size int) string {
+func RandNumber(size int) string {
 	b := make([]byte, size)
 	for i := range b {
 		b[i] = number[rand.Int63()%int64(lenNumber)]
@@ -52,7 +52,7 @@ func randNumber(size int) string {
 }
 
 //generates random
-func randEmail(size int) string {
+func RandEmail(size int) string {
 	email := goRand.RandString(size) + "@" + mailList[rand.Intn(7)]
 	return email
 }
