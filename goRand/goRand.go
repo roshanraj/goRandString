@@ -1,9 +1,18 @@
+// package generates random string of specified length, random email addresses and random number of specified length
 package goRand
 
 import (
 	"math/rand"
 	"time"
+
+	"github.com/roshanraj/goRandString/goRand"
 )
+
+// rune is used for unicode representaion in int32 format
+const number = "0123456789"
+const lenNumber = len(number)
+
+var mailList = [7]string{"gmail.com", "live.com", "aol.com", "yahoo.com", "indiatimes.com", "hotmail.com", "example.com"}
 
 const letterBytes = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const (
@@ -14,6 +23,7 @@ const (
 
 var src = rand.NewSource(time.Now().UnixNano())
 
+// generates random string
 func RandString(n int) string {
 	b := make([]byte, n)
 	// A src.Int63() generates 63 random bits, enough for letterIdxMax characters!
@@ -30,4 +40,19 @@ func RandString(n int) string {
 	}
 
 	return string(b)
+}
+
+// generates random number of specified length
+func randNumber(size int) string {
+	b := make([]byte, size)
+	for i := range b {
+		b[i] = number[rand.Int63()%int64(lenNumber)]
+	}
+	return string(b)
+}
+
+//generates random
+func randEmail(size int) string {
+	email := goRand.RandString(size) + "@" + mailList[rand.Intn(7)]
+	return email
 }
