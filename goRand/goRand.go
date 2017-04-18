@@ -4,8 +4,6 @@ package goRand
 import (
 	"math/rand"
 	"time"
-
-	"github.com/roshanraj/goRandString/goRand"
 )
 
 // rune is used for unicode representaion in int32 format
@@ -53,6 +51,6 @@ func RandNumber(size int) string {
 
 //generates random
 func RandEmail(size int) string {
-	email := goRand.RandString(size) + "@" + mailList[rand.Intn(7)]
+	email := RandString(size) + "@" + mailList[rand.Intn(7)]
 	return email
 }
