@@ -14,3 +14,21 @@ goRand is a tiny help suite for generating random data such as
 ## Installation
   go get github.com/Pallinder/go-randomdata
 
+## Usage
+package main
+```
+import (
+	"fmt"
+
+	"github.com/roshanraj/goRandString/goRand"
+)
+
+func main() {
+	for i := 1; i < 10; i++ {
+		fmt.Println(goRand.RandNumber(8))
+		fmt.Println(goRand.RandString(8))
+		fmt.Println(goRand.RandEmail(8))
+	}
+	fmt.Println("random string generator")
+}
+```
