@@ -12,7 +12,7 @@ goRand is a tiny help suite for generating random data such as
 ***random string generator has be picked up from http://stackoverflow.com/questions/22892120/how-to-generate-a-random-string-of-a-fixed-length-in-golang***
 
 ## Installation
-  go get github.com/Pallinder/go-randomdata
+  go get github.com/roshanraj/goRandString/goRand
 
 ## Usage
 package main
